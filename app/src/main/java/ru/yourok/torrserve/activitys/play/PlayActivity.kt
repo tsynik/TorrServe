@@ -6,13 +6,13 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.google.firebase.analytics.FirebaseAnalytics
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_play.*
 import ru.yourok.torrserve.R
 import ru.yourok.torrserve.ad.Ad
@@ -156,7 +156,7 @@ class PlayActivity : AppCompatActivity() {
                 setHasFixedSize(true)
                 layoutManager = LinearLayoutManager(this@PlayActivity)
                 if (lastPlayed > 0)
-                    layoutManager.scrollToPosition(lastPlayed)
+                    layoutManager?.scrollToPosition(lastPlayed)
                 adapter = TorrentFilesAdapter(files) {
                     showProgress(getString(R.string.buffering) + "...")
                     thread {

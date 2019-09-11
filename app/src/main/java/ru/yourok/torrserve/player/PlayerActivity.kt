@@ -6,9 +6,9 @@ import android.media.AudioManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Rational
-import com.google.android.exoplayer2.ui.SimpleExoPlayerView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.exoplayer2.ui.PlayerView
 import ru.yourok.torrserve.R
 import ru.yourok.torrserve.player.player.PlayerHolder
 import ru.yourok.torrserve.player.player.PlayerState
@@ -85,6 +85,6 @@ class PlayerActivity : AppCompatActivity() {
 
     override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean,
                                                newConfig: Configuration?) {
-        findViewById<SimpleExoPlayerView>(R.id.player_view).useController = !isInPictureInPictureMode
+        findViewById<PlayerView>(R.id.player_view).useController = !isInPictureInPictureMode
     }
 }

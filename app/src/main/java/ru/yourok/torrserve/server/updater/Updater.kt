@@ -3,7 +3,7 @@ package ru.yourok.torrserve.serverloader
 import android.app.Activity
 import android.content.Intent
 import android.os.Build
-import android.support.design.widget.Snackbar
+import com.google.android.material.snackbar.Snackbar
 import org.json.JSONObject
 import ru.yourok.torrserve.BuildConfig
 import ru.yourok.torrserve.R

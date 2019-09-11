@@ -3,7 +3,7 @@ package ru.yourok.torrserve.player.player
 import android.content.Context
 import android.media.AudioManager
 import android.net.Uri
-import android.support.v4.media.AudioAttributesCompat
+import androidx.media.AudioAttributesCompat
 import android.util.Log
 import com.google.android.exoplayer2.ExoPlaybackException
 import com.google.android.exoplayer2.ExoPlayer
