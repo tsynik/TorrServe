@@ -30,6 +30,8 @@ android {
             storeFile rootProject.file(freeProperties['storeFile'])
             storePassword freeProperties['storePassword']
         }
+        versionCode 76
+        versionName "1.1.76"
     }
     buildTypes {
         release {
