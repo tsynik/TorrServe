@@ -1,4 +1,5 @@
 *.iml
+*.bbprojectd
 .gradle
 /local.properties
 /.idea/workspace.xml
