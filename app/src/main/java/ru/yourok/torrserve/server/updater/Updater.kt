@@ -17,6 +17,7 @@ import ru.yourok.torrserve.utils.Http
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import java.io.OutputStream
 import java.io.IOException
 import kotlin.concurrent.thread
 
@@ -32,8 +33,27 @@ object Updater {
     private val serverRelease = "https://raw.githubusercontent.com/YouROK/TorrServer/master/release.json"
 
     fun checkLocalVersion() {
-        if (!ServerFile.serverExists())
-            throw IOException(App.getContext().getString(R.string.server_not_exists))
+        if (!ServerFile.serverExists()) {
+
+            var myInput = App.getContext().getAssets().open("torrserver")
+            var fileOut: OutputStream = FileOutputStream(ServerFile.get())
+            val buffer: ByteArray = ByteArray(32768)
+            var length: Int? = 0
+
+            while (true) {
+                length = myInput.read(buffer)
+                if (length <= 0)
+                    break
+                fileOut.write(buffer, 0, length)
+            }
+
+            fileOut.flush()
+            fileOut.close()
+            myInput.close()
+            ServerFile.get().setExecutable(true)
+
+            throw IOException()
+        }
         try {
             currServerVersion = Api.serverEcho()
         } catch (e: Exception) {
