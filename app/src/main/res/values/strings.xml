@@ -74,8 +74,8 @@
     <string name="arch">Arch</string>
     <string name="version">Version</string>
     <string name="current_version_apk">Installed Apk Version</string>
-    <string name="current_version_server">Installed Server Version</string>
-    <string name="downloading">Downloading...</string>
+    <string name="current_version_server">Server Version</string>
+    <string name="downloading">Downloading…</string>
 
     <string name="permission_storage_msg">Access to memory is required to write settings to a file</string>
     <string name="permission_btn">GRANT</string>
